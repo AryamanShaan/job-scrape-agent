@@ -1,0 +1,26 @@
+# Web framework
+fastapi
+uvicorn[standard]
+
+# Database
+sqlalchemy
+psycopg2-binary
+
+# Config
+pydantic-settings
+python-dotenv
+
+# HTTP client + HTML parsing
+httpx
+beautifulsoup4
+
+# File uploads + PDF parsing
+python-multipart
+pypdf2
+
+# LangChain core + LLM providers
+langchain-core
+langchain-ollama
+langchain-google-genai
+langchain-anthropic
+langchain-openai

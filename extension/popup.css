@@ -1,0 +1,227 @@
+/* Minimal, clean styling for the extension popup */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 400px;
+  min-height: 300px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  color: #333;
+  padding: 0;
+}
+
+/* ─── Tabs ───────────────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #e0e0e0;
+  background: #f8f8f8;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  color: #333;
+  background: #eee;
+}
+
+.tab.active {
+  color: #2563eb;
+  border-bottom: 2px solid #2563eb;
+  margin-bottom: -2px;
+}
+
+/* ─── Tab Content ────────────────────────────────────── */
+
+.tab-content {
+  display: none;
+  padding: 16px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.hint {
+  color: #888;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+/* ─── Form Elements ──────────────────────────────────── */
+
+textarea {
+  width: 100%;
+  height: 70px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  resize: vertical;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.form-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+/* ─── Buttons ────────────────────────────────────────── */
+
+.primary {
+  width: 100%;
+  padding: 8px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+.primary:hover {
+  background: #1d4ed8;
+}
+
+.primary:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.small {
+  padding: 6px 12px;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.small:hover {
+  background: #e0e0e0;
+}
+
+/* ─── Results ────────────────────────────────────────── */
+
+.results {
+  margin-top: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.job-card {
+  padding: 8px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  background: #fafafa;
+}
+
+.job-card .title {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.job-card .meta {
+  color: #888;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.job-card .score {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.job-card a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.company-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.company-row .name {
+  font-weight: 500;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ─── Loading State ──────────────────────────────────── */
+
+.loading {
+  text-align: center;
+  padding: 16px;
+  color: #888;
+}
+
+.error {
+  color: #ef4444;
+  padding: 8px;
+  font-size: 12px;
+}
+
+.success {
+  color: #22c55e;
+  padding: 8px;
+  font-size: 12px;
+}

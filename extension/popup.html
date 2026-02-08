@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Scrape Agent</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Tab navigation -->
+  <nav class="tabs">
+    <button class="tab active" data-tab="search">Search</button>
+    <button class="tab" data-tab="surveillance">Surveillance</button>
+    <button class="tab" data-tab="rank">Rank</button>
+    <button class="tab" data-tab="settings">Settings</button>
+  </nav>
+
+  <!-- ─── Tab 1: Search/Scrape ──────────────────────────────── -->
+  <section id="search" class="tab-content active">
+    <h2>Search Career Page</h2>
+    <p class="hint">Navigate to a career page, then enter job titles to search for.</p>
+    <textarea id="search-titles" placeholder="Enter job titles, one per line&#10;e.g. Software Engineer&#10;Machine Learning Engineer"></textarea>
+    <button id="search-btn" class="primary">Search This Page</button>
+    <div id="search-results" class="results"></div>
+  </section>
+
+  <!-- ─── Tab 2: Surveillance ───────────────────────────────── -->
+  <section id="surveillance" class="tab-content">
+    <h2>Tracked Companies</h2>
+
+    <!-- Add company form -->
+    <div class="form-row">
+      <input id="company-name" type="text" placeholder="Company name">
+      <button id="add-company-btn" class="small">+ Add Current Page</button>
+    </div>
+
+    <!-- List of tracked companies -->
+    <div id="company-list" class="results"></div>
+
+    <!-- Check for updates -->
+    <button id="check-btn" class="primary">Check All for New Jobs</button>
+    <div id="surveillance-results" class="results"></div>
+  </section>
+
+  <!-- ─── Tab 3: Rank ──────────────────────────────────────── -->
+  <section id="rank" class="tab-content">
+    <h2>Rate & Rank Jobs</h2>
+
+    <!-- Resume upload -->
+    <div class="form-row">
+      <input id="resume-file" type="file" accept=".pdf,.txt">
+      <button id="upload-btn" class="small">Upload Resume</button>
+    </div>
+    <div id="resume-status" class="hint"></div>
+
+    <!-- Rank jobs -->
+    <button id="rank-btn" class="primary">Rank My Jobs</button>
+    <div id="rank-results" class="results"></div>
+  </section>
+
+  <!-- ─── Tab 4: Settings ──────────────────────────────────── -->
+  <section id="settings" class="tab-content">
+    <h2>LLM Settings</h2>
+    <label>Provider:
+      <select id="llm-provider">
+        <option value="ollama">Ollama (Local)</option>
+        <option value="gemini">Gemini</option>
+        <option value="claude">Claude</option>
+        <option value="openai">OpenAI</option>
+      </select>
+    </label>
+    <label id="ollama-model-label">Ollama Model:
+      <input id="ollama-model" type="text" placeholder="llama3">
+    </label>
+    <label id="api-key-label" style="display:none;">API Key:
+      <input id="api-key" type="password" placeholder="Enter API key">
+    </label>
+    <button id="save-settings-btn" class="primary">Save Settings</button>
+    <div id="settings-status" class="hint"></div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
